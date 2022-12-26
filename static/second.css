@@ -1,0 +1,51 @@
+@import url("reset.css");
+
+
+body {
+    text-align: center;
+    background-image: url(imgs/bgd.png);
+    background-color: white;
+  }
+  
+h1 {
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+h2.list {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    width: 40%;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+  
+  p.list {
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    border-width: 1px;
+    border-style: solid;
+    width: 20%;
+    margin: 0 auto;
+    
+  }
+
+
+form input[type=submit] {
+    border-radius: 15px;
+}
+
+form.add input[type=submit] {
+    background-color: yellowgreen;
+}
+
+form.remove input[type=submit] {
+    background-color: crimson;
+    color: white;
+}

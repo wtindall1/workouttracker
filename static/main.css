@@ -1,0 +1,69 @@
+@import url("reset.css");
+
+
+body {
+  text-align: center;
+  background-image: url(imgs/bgd.png);
+  background-color: white;
+}
+
+h1 {
+  padding: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#goto_page, #workoutlogform input[type='submit']  {
+  background-color: yellowgreen;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+h2.list {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  width: 40%;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+p.list {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  border-width: 1px;
+  border-style: solid;
+  width: 20%;
+  margin: 0 auto;
+  
+}
+
+.button {
+  width: 50%;
+  border-radius: 15px;
+}
+
+
+table {
+  margin: 0 auto;
+  width: 40%;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+th {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}

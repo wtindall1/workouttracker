@@ -1,0 +1,74 @@
+Web app that allows the user to:
+-create and maintain a list of workouts in their split eg upper 1, pull 2
+-track which days they did each workout in a calendar
+-see how many times a week they have been to the gym in the last x weeks
+
+Backend: Python
+Frontend: Flask
+Data storage: html5 local ?
+
+Objects (backend):
+
+split_manager:
+    create list()
+    add()
+    edit()
+    delete()
+
+Calendar_manager:
+    create_dict()
+    track workout/update()
+    delete()
+    display_calendar()
+    run_analytics()
+
+use pandas for list of dates (so user can select
+date instead of typing)
+
+
+
+
+Frontend pages:
+1 - home page - log a workout, edit workout list, analytics, history
+
+
+
+
+TO DO LIST:
+/- Reverse order of history list
+/- only show workout days
+/- add weekday names
+/- Workout list - display and edit
+/- if workout already in list, dont add again
+/- handle error if workout to remove not in list
+/- BUG: workout list deletes when logging
+/- History not being populated
+/- dropdown / search menus for workout log fields
+/- only allow valid dates
+/- analytics
+/- data storage:
+    serialise as pickle files
+    MAKE THEM INSTANCE ATTRIBUTES NOT CLASS
+- styling
+    - make workout list look better
+    - homepage - move workout list below history
+    - change fonts
+/--Prevent user from adding blank workouts/dates
+- Make date box more user friendly - searchable / scrollable dropdown
+                                    - default value today
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

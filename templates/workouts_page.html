@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/second.css">
+</head>
+<body>
+<h1>Workout Tracker</h1>
+<br><br>
+<h2 class="list">Your Workout List</h2>
+<br>
+    {% for item in workout_list %}
+    <p class="list"> {{ item }} </p>
+    {% endfor %}
+    <br><br><hr><br><br>
+    <form method="post" action="/workouts" name="add" class="add">
+        {{ split_form.add.label }} 
+        <br>
+        {{ split_form.add }} {{ split_form.addButton }}
+    </form>
+    <br>
+    <form method="post" action="/workouts" name="remove" class="remove">
+        {{ split_form.remove.label }} 
+        <br> 
+        {{ split_form.remove }} {{ split_form.removeButton }}
+    </form>
+    <br>
+    <form method="get" action="/" name="homepage">
+        {{ split_form.homeButton }}
+    </form>
+</body>
+</html>
+<head>
