@@ -1,7 +1,7 @@
 from flask.views import MethodView
 from flask import Flask, render_template, request
 from WorkoutTracker import tracker
-from wtforms import Form, StringField, SubmitField, SelectField
+from wtforms import Form, StringField, SubmitField, SelectField, DateField
 from datetime import date, datetime as dt
 import pickle
 from os.path import exists
@@ -44,6 +44,8 @@ class HomePage(MethodView):
     def post(self):
         workout_to_log = LogForm(request.form)
 
+        print(workout_to_log.date.data)
+
         calendar_manager.track_workout(workout_to_log.date.data, workout_to_log.workout.data)
 
         #store objects to pickle files
@@ -59,7 +61,7 @@ class LogForm(Form):
 
 
     workout = SelectField("Workout completed: ", choices=split_manager.workouts)
-    date = StringField("Date in format YYYY-MM-DD: ")
+    date = DateField("Date: ", default=dt.today)
     button = SubmitField("Log")
 
 
@@ -99,10 +101,10 @@ class WorkoutsPage(MethodView):
 class SplitForm(Form):
 
     add = StringField("Add a workout: ")
-    addButton = SubmitField("Submit")
+    addButton = SubmitField("Add")
 
-    remove = StringField("Remove a workout: ")
-    removeButton = SubmitField("Submit")
+    remove = SelectField("Remove a workout: ", choices=split_manager.workouts)
+    removeButton = SubmitField("Remove")
 
     homeButton = SubmitField("Back to homepage")
 

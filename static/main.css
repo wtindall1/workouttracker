@@ -5,6 +5,7 @@ body {
   text-align: center;
   background-image: url(imgs/bgd.png);
   background-color: white;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 h1 {
@@ -16,15 +17,15 @@ h1 {
   font-weight: bold;
 }
 
-#goto_page, #workoutlogform input[type='submit']  {
-  background-color: yellowgreen;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+div {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  width: 50%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
 }
 
 h2.list {
@@ -40,16 +41,21 @@ p.list {
   text-align: center;
   color: black;
   font-size: 15px;
-  border-width: 1px;
-  border-style: solid;
   width: 20%;
   margin: 0 auto;
-  
+  padding: 5px;
 }
 
 .button {
-  width: 50%;
   border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgb(107, 178, 250);
+  color: white;
+  font-weight: bold;
+
 }
 
 
@@ -66,4 +72,15 @@ th {
   font-weight: bold;
   background-color: black;
   color: white;
+  padding: 5px;
+}
+
+td {
+  padding: 5px;
+
+}
+
+#workoutlogform {
+    font-size: 15px;
+    padding: 5px;
 }

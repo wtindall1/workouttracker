@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Workout Tracker</title>
     <link rel="stylesheet" href="static/main.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
 <h1>Workout Tracker</h1>
-<br><br>
-<form id="workoutlogform" name="workoutlogform" method="post" action="/">
-    {{ workout_to_log.workout.label }} {{ workout_to_log.workout }}
-    <br><br>
-    {{workout_to_log.date.label}} {{workout_to_log.date}}
-    <br><br>
-    {{workout_to_log.button(class_="button")}}
-</form>
-<br><br>
-<h2 class="list">Your Workout List</h2>
 <br>
-{% for item in workout_list %}
-<p class="list"> {{ item }} </p>
-{% endfor %}
+<div id="form">
+    <form id="workoutlogform" name="workoutlogform" method="post" action="/">
+        {{ workout_to_log.workout.label }} {{ workout_to_log.workout }}
+        <br><br>
+        {{workout_to_log.date.label}} {{workout_to_log.date}}
+        <br><br>
+        {{workout_to_log.button(class_="button")}}
+    </form>
+</div>
 <br>
-<form method="get" action="/workouts">
-    <input id="goto_page" type="submit" value="Edit your workout list" name="edit_workout_list" class="button"/>
-</form>  
-<br>
-<p>{{ Analytics }}</p>
-<br><br>
-<table>
-    <thead>
-        <tr>
-        <th>Day</th>
-        <th>Workout</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for key, value in calendar.items() %}
-    <tr>
-        <td> {{ key.strftime("%A") + ', ' }}{{ key }} </td>
-        <td> {{ value }} </td>
-    </tr>
+<div id="workoutlist">
+    <h2 class="list">Your Workout List</h2>
+    <br>
+    {% for item in workout_list %}
+    <p class="list"> {{ item }} </p>
     {% endfor %}
-    </tbody>
-</table>          
+    <br>
+    <form method="get" action="/workouts">
+        <input id="goto_page" type="submit" value="Edit your workout list" name="edit_workout_list" class="button"/>
+    </form>
+</div>  
+<br>
+<div id="history">
+    <p>{{ Analytics }}</p>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+            <th>Day</th>
+            <th>Workout</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for key, value in calendar.items() %}
+        <tr>
+            <td> {{ key.strftime("%A") + ', ' }}{{ key }} </td>
+            <td> {{ value }} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>          
 </body>
 </html>
 <head>

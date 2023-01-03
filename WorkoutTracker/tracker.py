@@ -32,13 +32,8 @@ class CalendarManager:
     #track or update
     def track_workout(self, date, workoutName):
         
-        try:
-            date_converted = dt.strptime(date, '%Y-%m-%d').date()
-            self.calendar[date_converted] = workoutName
-        except Exception:
-            pass
-
-
+        self.calendar[date] = workoutName
+        
     def delete_tracked_workout(self, date):
         
         try:

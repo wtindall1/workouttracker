@@ -3,16 +3,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="static/second.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
 <h1>Workout Tracker</h1>
 <br><br>
-<h2 class="list">Your Workout List</h2>
-<br>
+<div>
+    <h2 class="list">Your Workout List</h2>
+    <br>
     {% for item in workout_list %}
-    <p class="list"> {{ item }} </p>
+        <p class="list"> {{ item }} </p>
     {% endfor %}
-    <br><br><hr><br><br>
+</div>
+<br>
+<div>
+    <br><br>
     <form method="post" action="/workouts" name="add" class="add">
         {{ split_form.add.label }} 
         <br>
@@ -25,9 +30,10 @@
         {{ split_form.remove }} {{ split_form.removeButton }}
     </form>
     <br>
-    <form method="get" action="/" name="homepage">
+    <form method="get" action="/" name="homepage" class ="homepage">
         {{ split_form.homeButton }}
     </form>
+</div>
 </body>
 </html>
 <head>
