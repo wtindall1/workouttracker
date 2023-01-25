@@ -3,7 +3,7 @@ This is a single user app which allows the user to create a workout split, and t
 
 The app is deployed here: http://wtindall1.pythonanywhere.com/
 
-It can also be run locally, by ruhning main.py in the terminal
+It can also be run locally, by running main.py in the terminal
 
 Requirements:
   Flask==2.2.2
